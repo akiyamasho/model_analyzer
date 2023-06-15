@@ -156,10 +156,11 @@ class RecordAggregator:
         """
 
         field_values = {
-            record_type: set([
-                groupby_criterion(record)
-                for record in self._records[record_type]
-            ]) for record_type in record_types
+            record_type:
+                set([
+                    groupby_criterion(record)
+                    for record in self._records[record_type]
+                ]) for record_type in record_types
         }
         groupby_result = defaultdict(list)
         for record_type in record_types:
@@ -229,7 +230,7 @@ class RecordAggregator:
             record_types = self.record_types()
         aggregated_records = {
             record_type:
-            record_type.aggregation_function()(self._records[record_type])
+                record_type.aggregation_function()(self._records[record_type])
             for record_type in record_types
         }
         return aggregated_records

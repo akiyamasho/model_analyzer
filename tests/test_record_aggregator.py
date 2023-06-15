@@ -108,9 +108,9 @@ class TestRecordAggregatorMethods(trc.TestResultCollector):
                      (lambda v: v.value() < 5)]).get_records()
 
         retrieved_values = {
-            record_type:
-            [record.value() for record in retrieved_records[record_type]]
-            for record_type in [PerfLatencyP99, PerfThroughput]
+            record_type: [
+                record.value() for record in retrieved_records[record_type]
+            ] for record_type in [PerfLatencyP99, PerfThroughput]
         }
 
         self.assertEqual(len(retrieved_records[PerfLatencyP99]), 1)

@@ -94,7 +94,7 @@ class PerfAnalyzerConfig:
 
         self._additive_args = {
             (self._input_to_options[k] if k in self._input_to_options else k):
-            None for k in self.additive_args
+                None for k in self.additive_args
         }
 
     @classmethod

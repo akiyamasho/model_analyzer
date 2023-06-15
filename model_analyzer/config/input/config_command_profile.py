@@ -287,12 +287,11 @@ class ConfigCommandProfile(ConfigCommand):
         }
         perf_analyzer_flags_scheme = ConfigObject(
             schema={
-                k:
-                ((ConfigUnion([ConfigPrimitive(
-                    type_=str), ConfigListString()])) if (
-                        k in perf_analyzer_additive_keys) else ConfigPrimitive(
-                            type_=str))
-                for k in PerfAnalyzerConfig.allowed_keys()
+                k: ((ConfigUnion(
+                    [ConfigPrimitive(type_=str),
+                     ConfigListString()])) if
+                    (k in perf_analyzer_additive_keys) else ConfigPrimitive(
+                        type_=str)) for k in PerfAnalyzerConfig.allowed_keys()
             })
 
         triton_server_environment_scheme = ConfigObject(

@@ -161,8 +161,8 @@ class DetailedPlot:
                             key=lambda x: x[1])))[0]
 
         sorted_data = {
-            key: [data_list[i] for i in sort_indices
-                 ] for key, data_list in self._data.items()
+            key: [data_list[i] for i in sort_indices]
+            for key, data_list in self._data.items()
         }
 
         # Plot latency breakdown bars

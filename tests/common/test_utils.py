@@ -419,17 +419,20 @@ def construct_run_config_result(avg_gpu_metric_values,
     gpu_metric_values = {}
     for gpu_uuid, metric_values in avg_gpu_metric_values.items():
         gpu_metric_values[gpu_uuid] = {
-            key: list(
-                range(val - value_step * num_vals, val + value_step * num_vals,
-                      value_step)) for key, val in metric_values.items()
+            key:
+                list(
+                    range(val - value_step * num_vals,
+                          val + value_step * num_vals, value_step))
+            for key, val in metric_values.items()
         }
 
     non_gpu_metric_values_list = []
     for avg_non_gpu_metric_values in avg_non_gpu_metric_values_list:
         non_gpu_metric_values_list.append({
-            key: list(
-                range(val - value_step * num_vals, val + value_step * num_vals,
-                      value_step))
+            key:
+                list(
+                    range(val - value_step * num_vals,
+                          val + value_step * num_vals, value_step))
             for key, val in avg_non_gpu_metric_values.items()
         })
 

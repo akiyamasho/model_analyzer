@@ -62,7 +62,8 @@ class ResultManager:
         self._constraint_manager = constraint_manager
 
         # Data structures for sorting results
-        self._per_model_sorted_results: DefaultDict[str, SortedResults] = defaultdict(SortedResults)
+        self._per_model_sorted_results: DefaultDict[
+            str, SortedResults] = defaultdict(SortedResults)
         self._across_model_sorted_results: SortedResults = SortedResults()
 
         if state_manager.starting_fresh_run():
@@ -327,9 +328,10 @@ class ResultManager:
         ]
 
         self._run_comparators = {
-            model.model_name(): RunConfigResultComparator(
-                metric_objectives_list=[model.objectives()],
-                model_weights=[model.weighting()])
+            model.model_name():
+                RunConfigResultComparator(
+                    metric_objectives_list=[model.objectives()],
+                    model_weights=[model.weighting()])
             for model in self._config.profile_models
         }
 
