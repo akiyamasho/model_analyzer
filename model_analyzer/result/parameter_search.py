@@ -37,6 +37,7 @@ class ParameterSearch:
       - Will sweep from by powers of two from min to max parameter
       - If the user specifies a constraint, the algorithm will perform a binary search
         around the boundary if the constraint is violated
+      - Will not sweep at all if custom stimulus is provided by the user (via the "request-intervals" perf analyzer flag)
 
     Invariant: It is necessary for the user to add new measurements as they are taken
     """
