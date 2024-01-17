@@ -150,13 +150,13 @@ class BrutePlusBinaryParameterSearchRunConfigGenerator(ConfigGeneratorInterface)
         for model in self._models:
             if model_name == model.model_name():
                 return model.parameters()
-
         return {}
 
     def _get_model_perf_analyzer_flags(self, model_name: str) -> Dict:
         for model in self._models:
             if model_name == model.model_name():
                 return model.perf_analyzer_flags()
+        return {}
 
     def _set_parameter(
         self, run_config: RunConfig, model_parameters: Dict, parameter: int

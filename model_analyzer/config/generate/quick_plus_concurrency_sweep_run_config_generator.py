@@ -157,3 +157,4 @@ class QuickPlusConcurrencySweepRunConfigGenerator(ConfigGeneratorInterface):
         for model in self._models:
             if model_name == model.model_name():
                 return model.perf_analyzer_flags()
+        return {}
