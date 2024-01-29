@@ -140,7 +140,9 @@ class QuickPlusConcurrencySweepRunConfigGenerator(ConfigGeneratorInterface):
             for result in top_results:
                 run_config = deepcopy(result.run_config())
                 perf_analyzer_flags = self._get_model_perf_analyzer_flags(model_name)
-                parameter_search = ParameterSearch(self._config, perf_analyzer_flags=perf_analyzer_flags)
+                parameter_search = ParameterSearch(
+                    self._config, perf_analyzer_flags=perf_analyzer_flags
+                )
                 for concurrency in parameter_search.search_parameters():
                     run_config = self._set_concurrency(run_config, concurrency)
                     yield run_config
